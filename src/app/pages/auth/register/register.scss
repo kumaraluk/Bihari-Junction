@@ -1,0 +1,45 @@
+.register-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: var(--accent, #ff9800);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: #010101;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+    background: var(--accent, #ff9800);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+   .message {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #0f0;
+  }
+}
