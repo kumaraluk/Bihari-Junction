@@ -109,23 +109,45 @@ nav a {
   border-radius: 50%;
   object-fit: cover;
 }
-
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+.dropdown-item:hover {
+  background: rgba(255, 111, 0, 0.15);
+}
+.dropdown {
 .dropdown {
   position: absolute;
+  top: 110%;
   right: 0;
-  top: 42px;
-  background: rgba(255,255,255,0.15);
-  padding: 10px;
+  background: white;
   border-radius: 8px;
-  backdrop-filter: blur(10px);
-  min-width: 120px;
-  text-align: left;
+  width: 140px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
 }
 
 .dropdown-name {
   margin: 0;
   font-size: 0.9rem;
   color: #100a0a;
+}
+.profile-container {
+  position: relative;
+  cursor: pointer;
+  padding: 8px 12px;
+  background: #ff6f00;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+}
+.welcome-text {
+  font-size: 15px;
 }
 
 .dropdown-action {
@@ -238,8 +260,8 @@ nav a {
 /* ✅ Badge styling */
 .cart-badge {
   position: absolute;
-  top: 13px;
-  right: 118px;
+  top: 11px;
+  right: 219px;
   background: #ff4500;
   color: white;
   font-size: 12px;
@@ -247,6 +269,9 @@ nav a {
   border-radius: 50%;
   font-weight: bold;
   line-height: 1;
+}
+.logout {
+  color: red !important;
 }
 
 .nonveg {

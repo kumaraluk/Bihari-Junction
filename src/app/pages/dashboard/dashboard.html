@@ -5,14 +5,13 @@
     <div class="logo">Bihari Junction</div>
 
     <!-- Navigation -->
-    <nav>
+    <!-- <nav>
       <ul>
         <li><a routerLink="/dashboard">Home</a></li>
         <li><a routerLink="/about">About</a></li>
         <li><a routerLink="/products">Products</a></li>
-        <li><a routerLink="/orders">MyOrder</a></li>
       </ul>
-    </nav>
+    </nav> -->
 
     <!-- Right Section -->
     <div class="right-section">
@@ -29,16 +28,19 @@
       </div>
 
       <!-- Avatar dropdown -->
-      <div class="profile-container">
-        <button class="avatar-btn" (click)="toggleDropdown()">
-          <img src="assets/profile.jpg" alt="Profile" class="avatar-img" />
-        </button>
+     <div class="profile-container" (click)="toggleDropdown()">
 
-        <div *ngIf="isDropdownOpen" class="dropdown">
-          <p class="dropdown-name">{{ user?.name || "User" }}</p>
-          <a class="dropdown-action" (click)="logout()">Logout</a>
-        </div>
-      </div>
+  <div class="welcome-text">
+    Welcome, <strong>{{ user?.name || "User" }}</strong>
+  </div>
+
+  <div *ngIf="isDropdownOpen" class="dropdown">
+    <a routerLink="/orders" class="dropdown-item">My Orders</a>
+    <a (click)="logout()" class="dropdown-item logout">Logout</a>
+  </div>
+
+</div>
+
     </div>
 
   </div>
