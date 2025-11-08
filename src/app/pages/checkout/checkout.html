@@ -1,0 +1,33 @@
+<div class="checkout-container">
+
+  <h2 class="title">Checkout 🛒</h2>
+
+  <form>
+
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Enter your name" />
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="text" [(ngModel)]="phone" name="phone" placeholder="Enter phone number" />
+    </div>
+
+    <div class="form-group">
+      <label>Delivery Address</label>
+      <button type="button" class="location-btn" (click)="getCurrentLocation()">
+        📍 Use Current Location
+      </button>
+      <textarea [(ngModel)]="address" name="address" placeholder="Enter address manually..."></textarea>
+    </div>
+
+    <h3 class="cart-total">Final Amount: ₹ {{ total }}</h3>
+
+    <button type="button" class="place-btn" (click)="placeOrder()">
+      ✅ Place Order
+    </button>
+
+  </form>
+
+</div>

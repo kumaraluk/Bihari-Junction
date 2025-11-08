@@ -23,6 +23,7 @@
       </div>
       <div>
         <a routerLink="/cart" class="cart-icon">🛒</a>
+         <span *ngIf="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
 
       </div>
 

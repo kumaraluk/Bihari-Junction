@@ -17,8 +17,13 @@ export class DashboardComponent {
   foods: any[] = [];
   loading = true;
   errorMessage = '';
+  cartCount: number = 0;
 
-  constructor(private foodService: FoodService, private cartService: CartService) {}
+  constructor(private foodService: FoodService, private cartService: CartService) {
+     this.cartService.cartCount.subscribe(count => {
+    this.cartCount = count;
+  });
+  }
 
   user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null;
  ser = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null;

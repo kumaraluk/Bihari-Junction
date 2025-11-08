@@ -200,6 +200,54 @@ nav a {
   background: #7ac142;
   color: #1b5e20;
 }
+.cart-wrapper {
+  position: relative;
+  margin-right: 25px;
+}
+
+.cart-icon {
+  font-size: 22px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff4500;
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.cart-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-right: 18px;
+}
+
+.cart-icon {
+  font-size: 26px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ✅ Badge styling */
+.cart-badge {
+  position: absolute;
+  top: 13px;
+  right: 118px;
+  background: #ff4500;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+}
 
 .nonveg {
   background: #ff6b6b;
