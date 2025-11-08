@@ -1,0 +1,26 @@
+<h2 class="page-title">📦 My Orders</h2>
+
+<div *ngIf="orders.length === 0" class="empty">
+  No orders yet...
+  <br /><br />
+  <a routerLink="/dashboard" class="btn">Order Now</a>
+</div>
+
+<div *ngFor="let order of orders" class="order-card">
+  
+  <h3>🧾 Order ID: <span>{{ order._id }}</span></h3>
+
+  <p><strong>Total Amount:</strong> ₹ {{ order.totalAmount }}</p>
+
+  <p><strong>Delivery Address:</strong> {{ order.deliveryAddress }}</p>
+
+  <p><strong>Order Date:</strong> {{ order.createdAt | date:'medium' }}</p>
+
+  <h4>🛍️ Items:</h4>
+  <ul>
+    <li *ngFor="let item of order.cartItems">
+      {{ item.name }} (x{{ item.quantity }}) — ₹ {{ item.price }}
+    </li>
+  </ul>
+
+</div>

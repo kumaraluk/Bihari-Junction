@@ -79,34 +79,43 @@ export class CheckoutComponent implements OnInit {
 }
 
 
-  placeOrder() {
-    if (!this.name || !this.phone || !this.address) {
-      alert("Please fill all fields.");
-      return;
-    }
+ placeOrder() {
+  if (!this.name || !this.phone || !this.address) {
+    alert("Please fill all fields.");
+    return;
+  }
 
-    const orderData = {
-      user: JSON.parse(localStorage.getItem("user")!),
-      cartItems: this.cart,
-      totalAmount: this.total,
-      deliveryAddress: this.address,
-      locationCoordinates: {
-        latitude: this.lat,
-        longitude: this.lon,
-      },
-    };
+  const user = JSON.parse(localStorage.getItem("user")!);
 
-    this.http.post("http://localhost:5000/api/orders/place", orderData).subscribe(
+  const orderData = {
+    user: {
+      id: user._id,        // ✅ Store id consistently
+      name: user.name,
+      email: user.email
+    },
+    cartItems: this.cart,
+    totalAmount: this.total,
+    deliveryAddress: this.address,
+    locationCoordinates: {
+      latitude: this.lat,
+      longitude: this.lon,
+    },
+    status: "PENDING"
+  };
+
+  this.http.post("http://localhost:5000/api/orders/place", orderData)
+    .subscribe(
       (res) => {
         console.log("✅ ORDER SAVED TO DB", res);
         alert("✅ Order placed successfully!");
         this.cartService.clearCart();
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(["/orders"]);  // redirect to orders page
       },
       (err) => {
         console.error("❌ Order failed", err);
         alert("Order failed!");
       }
     );
-  }
+}
+
 }

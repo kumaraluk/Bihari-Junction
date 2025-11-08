@@ -82,7 +82,7 @@ export class DashboardComponent {
   }
   addToCart(food: any) {
   this.cartService.addToCart(food);
-  alert(`${food.name} added to cart ✅`);
+  // alert(`${food.name} added to cart ✅`);
 }
   // Logout
   logout() {

@@ -5,6 +5,7 @@ import { RegisterComponent } from './pages/auth/register/register';
 import { DashboardComponent } from './pages/dashboard/dashboard';
 import { CartComponent } from './pages/cart/cart';
 import { CheckoutComponent } from './pages/checkout/checkout';
+import { OrdersPage } from './pages/orders/orders';
 
 export const routes: Routes = [
 
@@ -13,6 +14,7 @@ export const routes: Routes = [
       { path: 'register', component: RegisterComponent },
             { path: 'dashboard', component: DashboardComponent },
             { path: "cart", component: CartComponent },
-            { path: "checkout", component: CheckoutComponent }
+            { path: "checkout", component: CheckoutComponent },
+            { path: 'orders', component: OrdersPage },
 
 ];
