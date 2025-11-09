@@ -2,25 +2,25 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-
-  private cartKey = "cartItems";
+  private cartKey = 'cartItems';
   cartCount = new BehaviorSubject<number>(0);
 
   constructor() {
     const storedCart = this.getCart();
-    this.cartCount.next(storedCart.length); // initialize count after refresh
+    this.cartCount.next(storedCart.length);
   }
 
   getCart() {
-    return JSON.parse(localStorage.getItem(this.cartKey) || "[]");
+    return JSON.parse(localStorage.getItem(this.cartKey) || '[]');
   }
-saveCart(cart: any) {
-  localStorage.setItem(this.cartKey, JSON.stringify(cart));
-   this.cartCount.next(cart.length); 
-}
+
+  saveCart(cart: any) {
+    localStorage.setItem(this.cartKey, JSON.stringify(cart));
+    this.cartCount.next(cart.length);
+  }
   addToCart(food: any) {
     let cart = this.getCart();
 
@@ -31,7 +31,7 @@ saveCart(cart: any) {
     } else {
       cart.push({ ...food, quantity: 1 });
     }
-    this.saveCart(cart); 
+    this.saveCart(cart);
 
     localStorage.setItem(this.cartKey, JSON.stringify(cart));
   }
@@ -39,11 +39,11 @@ saveCart(cart: any) {
   remove(itemId: string) {
     let cart = this.getCart().filter((item: any) => item._id !== itemId);
     localStorage.setItem(this.cartKey, JSON.stringify(cart));
-     this.saveCart(cart);
+    this.saveCart(cart);
   }
 
   clearCart() {
     localStorage.removeItem(this.cartKey);
-     this.cartCount.next(0); //
+    this.cartCount.next(0); //
   }
 }

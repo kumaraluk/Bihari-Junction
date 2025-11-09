@@ -1,63 +1,15 @@
-<header class="header">
-  <div class="header-container">
-
-    <!-- Logo -->
-    <div class="logo">Bihari Junction</div>
-
-    <!-- Navigation -->
-    <!-- <nav>
-      <ul>
-        <li><a routerLink="/dashboard">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/products">Products</a></li>
-      </ul>
-    </nav> -->
-
-    <!-- Right Section -->
-    <div class="right-section">
-
-      <!-- Search -->
-      <div class="search-container">
-        <input class="search-input" type="text" placeholder="Search foods..." />
-        <fa-icon [icon]="faSearch" class="search-icon"></fa-icon>
-      </div>
-      <div>
-        <a routerLink="/cart" class="cart-icon">🛒</a>
-         <span *ngIf="cartCount > 0" class="cart-badge">{{ cartCount }}</span>
-
-      </div>
-
-      <!-- Avatar dropdown -->
-     <div class="profile-container" (click)="toggleDropdown()">
-
-  <div class="welcome-text">
-    Welcome, <strong>{{ user?.name || "User" }}</strong>
-  </div>
-
-  <div *ngIf="isDropdownOpen" class="dropdown">
-    <a routerLink="/orders" class="dropdown-item">My Orders</a>
-    <a (click)="logout()" class="dropdown-item logout">Logout</a>
-  </div>
-
-</div>
-
-    </div>
-
-  </div>
-</header>
-
 <!-- Dashboard Content -->
 <div class="dashboard-container">
-
   <h2 class="section-title">Popular Bihar Dishes 🍲</h2>
 
   <div *ngIf="loading" class="loading">Loading menu...</div>
-  <div *ngIf="foods.length === 0 && !loading" class="no-data">
-    No food items available.
-  </div>
+  <div *ngIf="foods.length === 0 && !loading" class="no-data">No food items available.</div>
 
   <div class="food-grid">
-    <div class="food-card" *ngFor="let food of foods">
+    <div *ngIf="filteredFoods.length === 0 && !loading" class="no-results">
+      This is not a Dish from Bihar.
+    </div>
+    <div class="food-card" *ngFor="let food of filteredFoods">
       <img [src]="food.image" alt="{{ food.name }}" />
       <h3>{{ food.name }}</h3>
       <p class="desc">{{ food.description }}</p>
@@ -68,5 +20,5 @@
       <button class="add-btn" (click)="addToCart(food)">Add to Cart</button>
     </div>
   </div>
-
+  <div id="toast" class="toast">Item added to cart ✅</div>
 </div>

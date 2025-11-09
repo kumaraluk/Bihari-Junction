@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="header-container">
+    <!-- Logo -->
+    <div class="logo" routerLink="/dashboard">Bihari Junction</div>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input [(ngModel)]="searchText" (input)="search()" placeholder="Search dish..." />
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </div>
+
+    <div class="right-section">
+      <!-- Cart -->
+      <a routerLink="/cart" class="cart-btn">
+        🛒 <span *ngIf="cartCount > 0">{{ cartCount }}</span>
+      </a>
+
+      <!-- User Dropdown -->
+      <div class="profile" (click)="toggleDropdown()">
+        Welcome, <strong>{{ user?.name }}</strong>
+
+        <div *ngIf="isDropdownOpen" class="dropdown">
+          <a routerLink="/orders">My Orders</a>
+          <a (click)="logout()" class="logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
