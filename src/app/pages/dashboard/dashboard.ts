@@ -8,7 +8,7 @@ import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, RouterLink, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

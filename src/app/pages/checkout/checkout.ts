@@ -9,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 @Component({
   selector: "app-checkout",
   standalone: true,
-  imports: [CommonModule,RouterLink,FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: "./checkout.html",
   styleUrls: ["./checkout.scss"],
 })

@@ -1,6 +1,5 @@
-
 <app-header
-  *ngIf="!['/welcome', '/login', '/register'].includes(router.url)">
+  *ngIf="!['/', '/login', '/register'].includes(router.url)">
 </app-header>
 
 <router-outlet></router-outlet>
