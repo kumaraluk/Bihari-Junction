@@ -18,16 +18,18 @@ export class DashboardComponent {
   loading = true;
   errorMessage = '';
   cartCount: number = 0;
-   faSearch = faSearch;
+  faSearch = faSearch;
   faExpand = faExpand;
   faCompress = faCompress;
   faMoon = faMoon;
   faSun = faSun;
   isDropdownOpen = false;
 
-
-
-  constructor(private foodService: FoodService, private cartService: CartService,private route: ActivatedRoute) {
+  constructor(
+    private foodService: FoodService,
+    private cartService: CartService,
+    private route: ActivatedRoute
+  ) {
     this.cartService.cartCount.subscribe((count) => {
       this.cartCount = count;
     });
@@ -45,25 +47,21 @@ export class DashboardComponent {
     );
   }
 
- 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
   ngOnInit(): void {
     this.loadFoods();
-      this.route.queryParams.subscribe(params => {
-  const search = params['search'] ? params['search'].toLowerCase() : '';
+    this.route.queryParams.subscribe((params) => {
+      const search = params['search'] ? params['search'].toLowerCase() : '';
 
-  if (search) {
-    this.filteredFoods = this.foods.filter(food =>
-      food.name.toLowerCase().includes(search)
-    );
-  } else {
-    this.filteredFoods = [...this.foods];
-  }
-});
-    
+      if (search) {
+        this.filteredFoods = this.foods.filter((food) => food.name.toLowerCase().includes(search));
+      } else {
+        this.filteredFoods = [...this.foods];
+      }
+    });
   }
 
   loadFoods() {

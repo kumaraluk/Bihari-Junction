@@ -5,7 +5,7 @@
 
     <!-- Search -->
     <div class="search-box">
-      <input [(ngModel)]="searchText" (input)="search()" placeholder="Search dish..." />
+      <input [(ngModel)]="searchText" (input)="onSearchChange()" placeholder="Search dish..." />
       <fa-icon [icon]="faSearch"></fa-icon>
     </div>
 

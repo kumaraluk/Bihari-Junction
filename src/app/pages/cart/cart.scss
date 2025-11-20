@@ -1,11 +1,11 @@
-/* Page wrapper */
+
 .cart-page {
   width: 85%;
   margin: auto;
   padding-top: 30px;
 }
 
-/* Title */
+
 .title {
   text-align: center;
   font-size: 28px;
@@ -14,11 +14,10 @@
   margin-bottom: 20px;
 }
 
-/* CART ITEM (Main row container) */
 .cart-item {
   display: flex;
-  justify-content: space-between; /* ✅ pushes price + qty + remove to right */
-  align-items: center; /* ✅ vertically centered */
+  justify-content: space-between;
+  align-items: center; 
   padding: 18px;
   gap: 20px;
   background: #fff;
@@ -27,7 +26,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Food Image */
+
 .food-img {
   width: 130px;
   height: 100px;
@@ -35,9 +34,9 @@
   object-fit: cover;
 }
 
-/* LEFT SIDE (name + price) */
+
 .details {
-  flex: 1; /* ✅ takes available space */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,7 +54,7 @@
   color: #444;
 }
 
-/* RIGHT SIDE: qty + remove */
+
 .control {
   display: flex;
   align-items: center;
@@ -79,18 +78,22 @@
   font-weight: bold;
 }
 
-/* Remove button */
+
+
 .remove-btn {
-  margin-top: 8px;
-  background: #ff3b3b;
-  color: white;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 6px;
-  cursor: pointer;
+padding: 6px 14px;
+    background: #e63939;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-block;
+    margin: 8px auto 0;
+    transition: 0.2s ease;
 }
 
-/* CART SUMMARY */
+
 .summary {
   text-align: center;
   margin-top: 25px;
@@ -108,7 +111,7 @@
   cursor: pointer;
 }
 
-/* Empty Cart */
+
 .empty {
   text-align: center;
   padding: 50px;

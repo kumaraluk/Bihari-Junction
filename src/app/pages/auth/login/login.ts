@@ -33,7 +33,7 @@ export class LoginComponent {
         }, 1000);
       },
       error: (err) => {
-        this.message = err.error.message || 'Invalid credentials!';
+        this.message = err.error.message || 'Something Went Worng';
       }
     });
   }
